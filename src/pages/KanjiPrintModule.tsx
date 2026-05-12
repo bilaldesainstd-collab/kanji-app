@@ -60,7 +60,7 @@ export default function KanjiPrintModule() {
               {/*  FRONT SIDE */}
               <section className="print-page front-page">
                 <div className="card-grid">
-                  {frontRows.map((row, r) =>
+                  {frontRows.map((row) =>
                     row.map((card) => (
                       <div key={`f-${card.id}`} className="card front-card">
                         <div className="front-kanji">{card.kanji}</div>
@@ -73,7 +73,7 @@ export default function KanjiPrintModule() {
               {/* 🔲 BACK SIDE */}
               <section className={`print-page back-page ${batchIdx === batches.length - 1 ? 'last-back-page' : ''}`}>
                 <div className="card-grid">
-                  {backRows.map((row, r) =>
+                  {backRows.map((row) =>
                     row.map((card) => (
                       <div key={`b-${card.id}`} className="card back-card">
                         <div className="back-furigana">{card.reading}</div>
