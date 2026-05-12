@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Trophy, BookOpen, Zap, Search, ShieldCheck } from 'lucide-react';
 import { kanjiN5 } from '../data/kanjiN5';
+import { Printer } from 'lucide-react';
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
@@ -143,6 +144,11 @@ export default function Dashboard() {
         <button onClick={() => navigate('/browse-kanji')} className="group bg-cyber-surface/60 backdrop-blur-md border border-neon-cyan/40 hover:border-neon-cyan rounded-xl p-5 text-left transition-all hover:shadow-neon-cyan/30">
           <div className="flex items-center gap-3 mb-1"><Search className="w-6 h-6 text-neon-cyan group-hover:scale-110 transition-transform"/><span className="font-cyber text-lg text-white">BROWSE ALL KANJI</span></div>
           <p className="text-sm font-mono text-gray-400">{totalKanji} Items • {masteredCount} Mastered</p>
+        </button>
+
+        <button onClick={() => navigate('/print-cards')} className="group bg-cyber-surface/60 backdrop-blur-md border border-gray-500/40 hover:border-gray-300 rounded-xl p-5 text-left transition-all">
+          <div className="flex items-center gap-3 mb-1"><Printer className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors"/><span className="font-cyber text-lg text-white">PRINT FLASHCARDS</span></div>
+          <p className="text-sm font-mono text-gray-400">Generate A4 cut-out sheets (B&W)</p>
         </button>
       </div>
     </motion.div>
